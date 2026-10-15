@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+artifacts/
+checkpoints/
+.venv/
+config/*_resolved_source.json
+*.log
+data/corpus/ood_format/
+results/bpe/fit.json
+results/bpe/test.json
+results/bpe/train_summary.json
+results/bpe/test_summary.json
+results/bpe/test_records.jsonl
+submission_answers.md
+author_evidence.md
+train/language_model/budget.py

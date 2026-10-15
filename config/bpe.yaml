@@ -1,0 +1,108 @@
+shared_config: null
+seed: 42
+workflow:
+  module: algo.lexical.tokenizer
+  entry: run
+reading:
+  format: parquet
+  batch_rows: 128
+  use_threads: false
+  paths_by_split:
+    train:
+    - data/corpus/train/moleculenet_esol.parquet
+    - data/corpus/train/ds1000.parquet
+    - data/corpus/train/moleculenet_lipophilicity.parquet
+    - data/corpus/train/moleculenet_freesolv.parquet
+    - data/corpus/train/spider.parquet
+    - data/corpus/train/webnlg_2017.parquet
+    - data/corpus/train/matbench_expt_gap.parquet
+    - data/corpus/train/ucr_ecg5000.parquet
+    - data/corpus/train/pfam32_seed.parquet
+    - data/corpus/train/genomic_benchmarks_human_ensembl_regulatory.parquet
+    - data/corpus/train/ddxplus.parquet
+    - data/corpus/train/im2latex_100k.parquet
+    - data/corpus/train/leandojo_benchmark_4.parquet
+    - data/corpus/train/codexglue_code_refinement_buggy.parquet
+    - data/corpus/train/codexglue_code_refinement_fixed.parquet
+    test:
+    - data/corpus/test/moleculenet_esol.parquet
+    - data/corpus/test/ds1000.parquet
+    - data/corpus/test/moleculenet_lipophilicity.parquet
+    - data/corpus/test/moleculenet_freesolv.parquet
+    - data/corpus/test/spider.parquet
+    - data/corpus/test/webnlg_2017.parquet
+    - data/corpus/test/matbench_expt_gap.parquet
+    - data/corpus/test/ucr_ecg5000.parquet
+    - data/corpus/test/pfam32_seed.parquet
+    - data/corpus/test/genomic_benchmarks_human_ensembl_regulatory.parquet
+    - data/corpus/test/ddxplus.parquet
+    - data/corpus/test/im2latex_100k.parquet
+    - data/corpus/test/leandojo_benchmark_4.parquet
+    - data/corpus/test/codexglue_code_refinement_buggy.parquet
+    - data/corpus/test/codexglue_code_refinement_fixed.parquet
+preparation:
+  cpu_workers: 8
+  worker_threads: 1
+  process_start: spawn
+  chunksize: 1
+lexical:
+  environment:
+    TOKENIZERS_PARALLELISM: 'true'
+    RAYON_NUM_THREADS: 8
+    OPENBLAS_NUM_THREADS: 8
+    CUDA_VISIBLE_DEVICES: ''
+  fit_function:
+    module: algo.lexical.tokenizer
+    entry: fit_tokens
+  load_function:
+    module: algo.lexical.tokenizer
+    entry: load_tokens
+  vocab_size: 8192
+  train_split: train
+  test_split: test
+  batch_size: 8
+  save_token_ids: false
+  show_progress: false
+  add_special_tokens: false
+  skip_special_tokens: false
+  decode_errors: strict
+  json_indent: 2
+  pre_tokenizer:
+    add_prefix_space: false
+    use_regex: true
+  pre_tokenizer_prefix: []
+  special_tokens:
+  - text: <pad>
+    id: 0
+  - text: <bos>
+    id: 1
+  - text: <eos>
+    id: 2
+  - text: <answer>
+    id: 3
+  - text: <unk>
+    id: 4
+  special_token_options:
+    single_word: false
+    lstrip: false
+    rstrip: false
+    normalized: false
+    special: true
+  method: bpe
+  model:
+    dropout: null
+    unk_token: null
+    fuse_unk: false
+    byte_fallback: false
+    ignore_merges: false
+  trainer:
+    min_frequency: 2
+    limit_alphabet: 256
+    continuing_subword_prefix: ''
+    end_of_word_suffix: ''
+  output_root: artifacts/tokenizer
+  tokenizer_path: artifacts/tokenizer/tokenizer.json
+  fit_summary_path: artifacts/tokenizer/fit.json
+  test_summary_path: artifacts/tokenizer/test.json
+  records_path: artifacts/tokenizer/records.jsonl
+  test_encoding: direct

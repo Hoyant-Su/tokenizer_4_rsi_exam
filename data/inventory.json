@@ -1,0 +1,12 @@
+{
+  "train": {
+    "records": 138706,
+    "files": 15,
+    "file_bytes": 59176164
+  },
+  "test": {
+    "records": 35879,
+    "files": 15,
+    "file_bytes": 15117266
+  }
+}

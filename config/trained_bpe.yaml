@@ -1,0 +1,6 @@
+shared_config: bpe.yaml
+lexical:
+  output_root: artifacts/stored_tokenizer_check
+  tokenizer_path: results/bpe/tokenizer.json
+  test_summary_path: artifacts/stored_tokenizer_check/test.json
+  records_path: artifacts/stored_tokenizer_check/records.jsonl

@@ -1,0 +1,100 @@
+{
+  "tokenizer": "BPE",
+  "seed": 42,
+  "vocabulary_size": 8192,
+  "model_parameters": 31465984,
+  "training_epochs": 1,
+  "train_records": 138706,
+  "test_records": 35879,
+  "test_utf8_bytes": 18028975,
+  "test_content_tokens": 7053358,
+  "test_bits_per_byte": 1.1756447173292155,
+  "tokenizer_fit_seconds": 23.248524145106785,
+  "model_training_seconds": 1047.0438234140165,
+  "datasets": {
+    "moleculenet_esol": {
+      "records": 8,
+      "utf8_bytes": 733,
+      "content_tokens": 502,
+      "bits_per_byte": 3.025619947137543
+    },
+    "ds1000": {
+      "records": 12,
+      "utf8_bytes": 2231,
+      "content_tokens": 1271,
+      "bits_per_byte": 3.5237742772595597
+    },
+    "moleculenet_lipophilicity": {
+      "records": 49,
+      "utf8_bytes": 3275,
+      "content_tokens": 2402,
+      "bits_per_byte": 2.1794464217768468
+    },
+    "moleculenet_freesolv": {
+      "records": 4,
+      "utf8_bytes": 218,
+      "content_tokens": 153,
+      "bits_per_byte": 3.7427363547547627
+    },
+    "spider": {
+      "records": 20,
+      "utf8_bytes": 2388,
+      "content_tokens": 1147,
+      "bits_per_byte": 1.9831969460179038
+    },
+    "webnlg_2017": {
+      "records": 86,
+      "utf8_bytes": 99917,
+      "content_tokens": 39446,
+      "bits_per_byte": 1.623225229056246
+    },
+    "matbench_expt_gap": {
+      "records": 57,
+      "utf8_bytes": 898,
+      "content_tokens": 783,
+      "bits_per_byte": 2.8142953312871777
+    },
+    "ucr_ecg5000": {
+      "records": 64,
+      "utf8_bytes": 100774,
+      "content_tokens": 55691,
+      "bits_per_byte": 2.85874466615164
+    },
+    "pfam32_seed": {
+      "records": 13333,
+      "utf8_bytes": 6433579,
+      "content_tokens": 2513373,
+      "bits_per_byte": 1.8319713547178396
+    },
+    "genomic_benchmarks_human_ensembl_regulatory": {
+      "records": 2913,
+      "utf8_bytes": 1299792,
+      "content_tokens": 313920,
+      "bits_per_byte": 1.876338792609195
+    },
+    "ddxplus": {
+      "records": 12912,
+      "utf8_bytes": 8517671,
+      "content_tokens": 3474047,
+      "bits_per_byte": 0.5302874607452743
+    },
+    "im2latex_100k": {
+      "records": 988,
+      "utf8_bytes": 116612,
+      "content_tokens": 61053,
+      "bits_per_byte": 2.358502157715153
+    },
+    "leandojo_benchmark_4": {
+      "records": 2873,
+      "utf8_bytes": 867829,
+      "content_tokens": 362796,
+      "bits_per_byte": 1.6745815671991493
+    },
+    "codexglue_code_refinement": {
+      "records": 2560,
+      "utf8_bytes": 583058,
+      "content_tokens": 226774,
+      "bits_per_byte": 0.42881057754067575
+    }
+  }
+}

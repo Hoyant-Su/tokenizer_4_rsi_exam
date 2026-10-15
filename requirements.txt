@@ -1,0 +1,7 @@
+torch==2.6.0
+transformers==4.51.1
+tokenizers==0.21.4
+numpy==2.2.6
+pyarrow==22.0.0
+orjson==3.11.5
+PyYAML==6.0.3
