@@ -2,6 +2,26 @@
 
 A BPE baseline for learning token vocabularies from domain-specific text and evaluating them with a fixed autoregressive language model. The repository includes the training and test data, a trained tokenizer, and per-dataset and per-record results.
 
+## Repository layout
+
+```text
+algo/                   Tokenizer and optimizer algorithms
+model/                  Language-model construction and initialization
+train/                  Model training, scheduling and checkpoint handling
+eval/                   Language-model evaluation
+scripts/                Command-line entrypoint
+config/                 Fixed experiment settings
+data/language_model/    Data loading and batching code
+data/streams/           Input readers
+data/corpus/train/      Training data
+data/corpus/test/       Test data
+results/bpe/            Trained BPE tokenizer and reference measurements
+task/                   Research task specification
+licenses/               Third-party code notices
+```
+
+`results/bpe/` contains data artifacts only, with no executable code. Running the experiment writes new outputs to `artifacts/` and model weights to `checkpoints/`; both are excluded from Git and separate from the reference results. To reproduce the BPB measurement, run the full training and test commands below. Checking the included tokenizer verifies tokenization and reconstruction, not language-model BPB.
+
 ## Install
 
 Use Python 3.12 and an NVIDIA GPU with CUDA support for model training. Tokenizer fitting and encoding run on CPU.
